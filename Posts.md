@@ -9,6 +9,7 @@ permalink: /posts/
       <div>
       <a href="{{ post.url }}"> {{ post.title }} </a>
       </div>
+      <br>
 {% endfor %}
 </div>
 
