@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Setup-And-Startup"
+title: "Setup And Startup"
 date: 2022-11-07
 categories: BackendFrameworks
 ---
