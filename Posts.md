@@ -4,7 +4,9 @@ title: Posts
 permalink: /posts/
 ---
 
+<div>
 {% for post in site.posts %}
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}"> {{ post.title }} </a>
 {% endfor %}
+</div>
 
