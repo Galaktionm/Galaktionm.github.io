@@ -4,12 +4,10 @@ title: Backend Frameworks
 ---
 <h1>Latest Posts</h1>
 
-{% for post in site.categories %}
-  <ul>
-    {& if category=="BackendFramework" %}
-    {% for post in category[1] %}
+<ul>
+{% for post in site.posts %}
+    {& if post.categories contains "BackendFrameworks" % }   
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
     {% endif %}
-  </ul>
 {% endfor %}
+</ul>
