@@ -8,7 +8,7 @@ categories: BackendFrameworks
 Hibernate and Entity Framework Core are gold standards of Object-Relational Mapping in Spring and ASP.NET Core applications, respectively. In Fact, when we are talking about persistence and everything it comprises in these frameworks, we are implying these ORM’s. Often, “Persistence in Spring” and “Hibernate” are interchangeable, and the same goes for ASP.NET Core and EF Core. 
 
 In the subsequent posts, I want to write about working with these tools. However, before I start writing about entity relationships, transactions and other important subjects, I want to sum up how these ORM’s can be configured. 
-In this case, by “configuration”, I don’t mean setting up the connection, where to write connection strings, which classes are used for configuring these things and so on. Skipping over that, I want to write about configuring entities and their relationships. 
+In this case, by “configuration”, I don’t mean setting up the connection, where to write connection strings, which classes are used for configuring these things and so on. Skipping over that, I want to write about general ways of configuring entities and their relationships. 
 Both Hibernate and EF Core are ORM’s, therefore they serve the same purpose. However, the way they configure entities are different, so I wanted to sum up these differences and what options they provide. I have to say, I have much more to say about EF Core than Hibernate, not because it is better, but it provides more options of doing things (things which Hibernate can absolutely do as well).
 
 ### Hibernate
