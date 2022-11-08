@@ -14,6 +14,7 @@ Both Hibernate and EF Core are ORM’s, therefore they serve the same purpose. H
 ### Hibernate
 Most of Hibernate’s entity configurations are done with annotations. Hibernate provides robust and intuitive way of defining relationships. Entities themselves are annotated with @Entity, with their primary key annotated with @Id. There are many other annotations that we can use, such as @Column, @GeneratedValue to extend functionality. (The concrete purpose of these annotations are not the subject of this post).
 Relationships are mapped with @OneToOne, @OneToMany and @ManyToMany. Hibernate does not need us to explicitly declare if a relationship is unidirectional or bidirectional. If one entity contains a field with one of those annotations referencing another entity, while the other entity does not, then the relationship is unidirectional. If the referenced entity also has corresponding field and annotation, then the relationship becomes bidirectional. (Often we need additional steps to configure bidirectional relationship, but this post is not about that). Hibernate is a powerful tool which requires few lines to configure correctly. Of course, you have to comprehend the concept of entity relationships and your current needs fully and correctly. 
+
 Many of us have solved complex mathematical problems and spent great deal of time just thinking and writing only few lines of equations. Often times, you can solve a problem just by writing few lines, but in order to write those few lines correctly, you have to take your time to think and understand the problem fully. In short, you may spend an hour thinking about the ways to solve a problem, and write a solution in half a minute. Working with Hibernate (and to some extent, the same can be said about EF Core) is one of those cases. If you think about what your program needs and come up with solutions, you can put those solutions into action by writing a few lines of code, most of which can be annotations. 
 
 ### Entity Framework Core
@@ -21,6 +22,7 @@ EF Core provides much more ways to define your entities and how they behave than
 
 #### Conventional 
 Conventional, or By-Convention approach is more of a straightforward way, and can save us a lot of time when we just need easy and non-complex relationship configured. Basically, we have to define properties of other entities that we want our entity to reference, and EF Core will work out the rest. However, we have to consider one important thing: If the referenced entity also has corresponding property that references our entity, EF Core can figure out what kind of relationship they have (is it one-to-one or one-to-many for example), but if the referenced entity does not have such property, the mapper can’t be sure, so by default it assumes that the relationship is one-to-many. 
+
 As easy and straightforward this approach is, it also has drawbacks. For example, we might need to have unidirectional one-to-one relationship (as stated above, in case of only one entity having referencing property, one-to-many is assumed by default), or we may need composite foreign keys, which we need to configure manually. 
 
 #### Annotations
@@ -28,8 +30,10 @@ By using annotations, we gain the ability to explicitly define which foreign key
 
 #### Fluent API
 Fluent API is a great way to define entity relationships, and as someone who likes explicitly defining such things, is the one try to always use. Relationships defined this way are written in Database Context class’s OnModelCreating(ModelBuilder builder) method, which is handy in a way that you all of the logic explicitly defined in one place, which you can check and update anytime. Basic Fluent API code looks like this:
+
 `builder.Entity<City>().HasOne<Country>(e=>e.Country).WithMany(e=>e.Cities).HasForeignKey(p=>p.CountryId);`
-Which makes it clear what kind of relationship entities have and what keys they use. 
+
+This approach makes it clear what kind of relationship entities have and what keys they use. 
 
 
 
