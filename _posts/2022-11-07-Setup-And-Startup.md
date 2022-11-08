@@ -14,7 +14,9 @@ For starters, most of ASP.NET Core’s setup and configuration happens in Progra
 ##### To discuss each of them separately, let’s start with ASP.NET Core. 
 Before releasing .NET 6, application startup was defined in two classes: Program.cs and Startup.cs. Program class had the main method, and the host builder method, which defined the startup class that was to be used-usually Startup.cs, which was used to configure application builder and services. 
 Starting from .NET 6, all of those code in contained within single Program.cs class, which now does the job of both of those classes. At first, someone might think that writing all those code in a single file makes it bloated and overcomplicated, however that is not the case. 
+
 Not only it is convenient to have all the configuration in a single file, it is also very intuitive. Not only that, when I tried to do the startup configuration the “old” way-by having both Program.cs and Startup.cs files, I find it much less maintainable, error-prone and counter-productive. Not to say that it is not possible or a “bad” idea, after all, since .NET 6 was released just a year ago, many applications still use both files.   However, I found having a single Program.cs file much better.
+
 It is very easy and intuitive to understand the code that way: You create a WebApplicationBuilder, add services, build the application, optionally create service scope, and tell application which services to use. You can separate the code with new lines to make it more readable. 
 
 ##### Spring’s component-based structure
