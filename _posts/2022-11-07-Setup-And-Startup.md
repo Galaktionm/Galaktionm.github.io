@@ -18,7 +18,7 @@ Not only it is convenient to have all the configuration in a single file, it is 
 It is very easy and intuitive to understand the code that way: You create a WebApplicationBuilder, add services, build the application, optionally create service scope, and tell application which services to use. You can separate the code with new lines to make it more readable. 
 
 ##### Spring’s component-based structure
-Spring application has different structure. Configuration is scattered across multiple classes in multiple packages. Often, you will find that the class responsible for running the application looks like this:
+Spring application has different structure. Configuration is scattered across multiple classes in multiple packages. Often, you will find that the class responsible for running the application contains only few lines of code and looks like this:
 
 ![SpringApplication](/assets/SpringAppStartup.png)
 
