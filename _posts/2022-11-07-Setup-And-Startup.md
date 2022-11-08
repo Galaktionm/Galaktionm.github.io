@@ -11,7 +11,7 @@ I will try to describe both of them and point out the features that I like and d
 
 For starters, most of ASP.NET Core’s setup and configuration happens in Program.cs file and appsettings.json file, while for spring we have completely different picture. There is not a single, main class responsible for configuration. Much like .Net’s appsettings.json file, you can define database connection strings and other settings in application.yaml/application.properties file, however, when it comes to classes that are used for configuration, you often have many separate classes responsible for configuring different parts of the program. 
 
-##### To discuss each of them separately, let’s start with ASP.NET Core. 
+#### To discuss each of them separately, let’s start with ASP.NET Core. 
 Before releasing .NET 6, application startup was defined in two classes: Program.cs and Startup.cs. Program class had the main method, and the host builder method, which defined the startup class that was to be used-usually Startup.cs, which was used to configure application builder and services. 
 Starting from .NET 6, all of those code in contained within single Program.cs class, which now does the job of both of those classes. At first, someone might think that writing all those code in a single file makes it bloated and overcomplicated, however that is not the case. 
 
@@ -19,7 +19,7 @@ Not only it is convenient to have all the configuration in a single file, it is 
 
 It is very easy and intuitive to understand the code that way: You create a WebApplicationBuilder, add services, build the application, optionally create service scope, and tell application which services to use. You can separate the code with new lines to make it more readable. 
 
-##### Spring’s component-based structure
+#### Spring’s component-based structure
 Spring application has different structure. Configuration is scattered across multiple classes in multiple packages. Often, you will find that the class responsible for running the application contains only few lines of code and looks like this:
 
 ![SpringApplication](/assets/SpringAppStartup.png)
@@ -35,7 +35,7 @@ For simplicity, let’s say that @SpringBootApplication class is contained in th
 Otherwise, we have to explicitly use @ComponentScan annotation to tell application context which packages we would like to be scanned. 
 As of configuration, we write code in the appropriate class annotated with @Configuration. Database configuration happens in one class, Authorization and Authentication configuration in another, and so on. I won’t be writing about concrete cases here. Please check other articles for that. 
 
-##### CommandLineRunner and Service Scope
+#### CommandLineRunner and Service Scope
 
 Often, especially in development phases, we need some methods to run when the application starts. Personally, most of the time, I need to populate database with dummy data, either to find out if the entity relationships are configured properly or to use the data to test other functionality. Either way, I need to have the data ready when the application starts. Both frameworks give you the ability to do just that, in  different ways.
 
@@ -48,7 +48,7 @@ using(var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetService<DatabaseContext>();
 }
- </code>
+</code>
 
 
 
