@@ -33,7 +33,8 @@ For simplicity, let’s say that @SpringBootApplication class is contained in th
 Otherwise, we have to explicitly use @ComponentScan annotation to tell application context which packages we would like to be scanned. 
 As of configuration, we write code in the appropriate class annotated with @Configuration. Database configuration happens in one class, Authorization and Authentication configuration in another, and so on. I won’t be writing about concrete cases here. Please check other articles for that. 
 
-CommandLineRunner and Service Scope
+##### CommandLineRunner and Service Scope
+
 Often, especially in development phases, we need some methods to run when the application starts. Personally, most of the time, I need to populate database with dummy data, either to find out if the entity relationships are configured properly or to use the data to test other functionality. Either way, I need to have the data ready when the application starts. Both frameworks give you the ability to do just that, in  different ways.
 Spring offers CommandLineRunner method (Which has to be annotated with @Bean annotation), that will execute statements contained inside it as soon as the application starts. In order for it to work, the method has to be contained inside a class that is annotated with @Component or it’s derived annotations. There is one detail, however: If you need to use the services of the application, often times you have to inject them in the class only for the CommandLineRunner method to use them. 
 In ASP.NET Core, there is no need to use dependency injection for this. Since most of the time this Is done in Program.cs file, application and application builder variables are already defined, all you have to do is create a scope, which returns instance of IServiceScope interface. The interface can be used to get a ServiceProvider, from which we can get the service that we need. For example:
