@@ -9,7 +9,7 @@ Hibernate and Entity Framework Core are gold standards of Object-Relational Mapp
 
 In the subsequent posts, I want to write about working with these tools. However, before I start writing about concrete cases of entity relationships, transactions and other important subjects, I want to sum up how these ORM’s can be configured. 
 In this case, by “configuration”, I don’t mean setting up the connection, where to write connection strings, which classes are used for configuring these things and so on. Skipping over that, I want to write about the general ways of configuring entities and their relationships. 
-Both Hibernate and EF Core are ORM’s, therefore they serve the same purpose. However, the way they configure entities are different, so I wanted to sum up these differences and what options they provide. I have to say, I have much more to say about EF Core than Hibernate, not because it is better, but it provides more options of doing things (things which Hibernate can absolutely do as well).
+Both Hibernate and EF Core are ORM’s, therefore they serve the same purpose. However, the way they configure entities are different, so I wanted to sum up these differences and what options they provide. Especially since EF Core provides more options of doing things (things which Hibernate can absolutely do as well).
 
 ### Hibernate
 Most of Hibernate’s entity configurations are done with annotations. Hibernate provides robust and intuitive way of defining relationships. Entities themselves are annotated with @Entity, with their primary key annotated with @Id. There are many other annotations that we can use, such as @Column, @GeneratedValue to extend functionality. (The concrete purpose of these annotations are not the subject of this post).
