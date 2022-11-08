@@ -48,11 +48,10 @@ using(var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetService<DatabaseContext>();
 }
-</code>
 
 
 
 #### Conclusion
-In this post I tried to compare startup and configuration process of Spring and ASP.NET Core applications. Although they differ in a lot of ways, one can not say that one is better that the other. In Spring, it is very convenient and handy to have explicitly defined configuration classes, you can check and optionally change the code anytime. Although, In ASP.NET Core, if you understand what you are doing and what each service’s responsibility is, it isn’t much of a drawback to not have classes and their functionality explicitly defined, and often keeps program files concise. Every framework has different structure, it’s better to define their value by their concrete implementations of persistence, user managing, MVC and API capabilities for example. Both Spring and ASP.NET Core are very powerful frameworks that offer wide range of capabilities. Thanks for reading, please check out other articles too : - )
+In this post I tried to compare startup and configuration process of Spring and ASP.NET Core applications. Although they differ in a lot of ways, one can not say that one is better that the other. In Spring, it is very convenient and handy to have explicitly defined configuration classes, you can check and optionally change the code anytime. Although, In ASP.NET Core, if you understand what you are doing and what each service’s responsibility is, it isn’t much of a drawback to not have classes and their functionality explicitly defined, and often keeps program files concise. Every framework has different structure, it’s better to define their value by their concrete implementations of persistence, user managing, MVC and API capabilities for example. Both Spring and ASP.NET Core are very powerful frameworks that offer wide range of capabilities. Thanks for reading, please check out other articles too
 
 
