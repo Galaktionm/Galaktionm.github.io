@@ -12,7 +12,7 @@ In this article I will discuss three strategies:
 2)	Table per concrete subclass (TPC)
 3)	Joined Table (TPT)
 
-### #Single table strategy
+### Single table strategy
 Single table strategy maps the whole class hierarchy to a single table, which includes columns for storing all the data in the hierarchy. Discriminator columns are used to differentiate between rows. Both Hibernate and EF Core choose this strategy as default, if none specified, and provide discriminator columns. Overriding default discriminator properties are just a matter of annotation(Hibernate) or a single method in OnModelCreating method (EF Core). 
 By using this strategy, not only you simplify the database structure by having only one table, but also benefit from performance bonus compared to other strategies, because queries perform much faster. However, like many other things in programming, this approach also has drawbacks.
 Before I move on to the main problem of this approach, I have to say that having many differend kinds of objects in one table makes in bloated, unintuitive and harder to work with. For example let’s say we have abstract Item class for online shopping, which has subclasses of books, laptops, PC items, many different kinds of clothes and so on. Having all these completely different items in a single table seems… not good. If we wanted to work with only one kind of data, we have no choice but to make operations to this table, when in other strategies we could’ve used only the corresponding table and left others alone. 
