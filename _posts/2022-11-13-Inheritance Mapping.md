@@ -15,6 +15,8 @@ In this article I will discuss three strategies:
 
 3)	Joined Table (TPT)
 
+In .NET Core terminology, "TPC" stands for "Table-per-concrete-type", and "TPT" stands for "Table-per-type"
+
 ### Single table strategy
 Single table strategy maps the whole class hierarchy to a single table, which includes columns for storing all the data in the hierarchy. Discriminator columns are used to differentiate between rows. Both Hibernate and EF Core choose this strategy as default, if none specified, and provide discriminator columns. Overriding default discriminator properties are just a matter of annotation(Hibernate) or a single method in OnModelCreating method (EF Core). 
 By using this strategy, not only you simplify the database structure by having only one table, but also benefit from performance bonus compared to other strategies, because queries perform much faster. However, like many other things in programming, this approach also has drawbacks.
