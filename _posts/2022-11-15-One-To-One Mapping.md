@@ -91,8 +91,3 @@ As far as I know, unlike Hibernate, EF Core does not have this option ready for 
 In this post, I tried to summarize the process of mapping One-To-One relationship between entities using Entity Framework Core and Hibernate. Some things are easier in one ORM, others in another, but overall both are brilliant and reliable. Thanks for reading
 
 
-
-
-
-
-
