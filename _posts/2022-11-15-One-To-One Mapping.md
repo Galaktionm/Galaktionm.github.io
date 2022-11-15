@@ -58,7 +58,7 @@ Instead of sharing the same primary key values, we can create separate column th
 
 In Hibernate, implementing this strategy is almost exactly the same, we just have to change a single annotation: instead of @PrimaryKeyJoinColumn, we annotate User field in Address with @JoinColumn, and that’s it. This tells Hibernate that it should create a separate foreign key column referencing user, instead of using primary key as foreign key. 
 
-## Entity Framework Core
+### Entity Framework Core
 
 In EF Core, we need a bit more work. First of all, we have to explicitly define a new field which will hold foreign key values:
 
