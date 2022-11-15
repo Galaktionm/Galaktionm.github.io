@@ -29,7 +29,7 @@ As easy and straightforward this approach is, it also has drawbacks. For example
 By using annotations, we gain the ability to explicitly define which foreign key EF Core should use. Also, in case one entity has two different properties of the same entity class, we can use InverseProperty annotation to link the properties correctly.
 
 #### Fluent API
-Fluent API is a great way to define entity relationships, and as someone who likes explicitly defining such things, is the one try to always use. Relationships defined this way are written in Database Context class’s OnModelCreating(ModelBuilder builder) method, which is handy in a way that you all of the logic explicitly defined in one place, which you can check and update anytime. Basic Fluent API code looks like this:
+Fluent API is a great way to define entity relationships, and as someone who likes explicitly defining such things, is the one I try to always use. Relationships defined this way are written in Database Context class’s OnModelCreating(ModelBuilder builder) method, which is handy in a way that you have all of the logic explicitly defined in one place, which you can check and update anytime. Basic Fluent API code looks like this:
 
 `builder.Entity<City>().HasOne<Country>(e=>e.Country).WithMany(e=>e.Cities).HasForeignKey(p=>p.CountryId);`
 
