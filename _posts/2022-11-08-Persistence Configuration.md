@@ -37,5 +37,6 @@ This approach makes it clear what kind of relationship entities have and what ke
 
 
 
+
 ### Conclusion
 This post was meant to be a review of how configuration works in these ORM’s. Discussing the differences and contrast of tools such as ORM’s is always interesting, and often I don’t like to say that one tool, be it ORM, framework or a programming language, is better than the other. However, if we were to compare these two object-relational mappers and wanted to say “which is better” for whatever reason, configuration quirks are not a good way to evaluate their worth. Once again, this post was just a review of their general configuration methods. How they configure and define concrete cases is much more interesting, and I will write about it the next posts. Thanks for reading 😊
