@@ -6,8 +6,6 @@ categories: BackendFrameworks
 ---
 
 
-
-
 Many-To-Many associations are usually implemented using an intermediate table. This can be done either by hidden linking table automatically created by ORM (“hidden” meaning that we don’t have corresponding entity class in our application code, the table is created automatically in the database only) , or an intermediate entity.  Let’s review what Hibernate and Entity Framework Core offer us in such cases. 
 
 In this example, we are using Employee and Task entity classes. An Employee can have multiple tasks assigned, and a task can have multiple employees working on it.
