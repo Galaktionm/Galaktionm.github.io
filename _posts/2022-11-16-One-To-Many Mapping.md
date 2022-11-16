@@ -44,7 +44,7 @@ We notice that it has the same @JoinColumn annotation, pointing to the same colu
 The principle of mapping One-To-Many relationship in EF Core is the same. However, EF Core has a different default behaviour.
 As mentioned above, if we don’t explicitly use @JoinColumn annotation one “One” side of the relationship, Hibernate automatically creates an additional table to hold the connecting primary keys. In EF Core, creating a foreign key column is the default behaviour.
 
-![OTMCSM](/assets/OTMCSM.png)
+![OTOMCSM](/assets/OTOMCSM.png)
  
 In this case, we haven’t explicitly configred the foreign key, but foreign key column “ItemId” will get created in “Bid”table, with no additional tables getting created.
 
