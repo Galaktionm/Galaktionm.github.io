@@ -37,5 +37,3 @@ Many-To-Many relationship can also be configured using an intermediate entity cl
 
 ## Conclusion
 This was a review of many-to-many mapping in Hibernate and Entity Framework Core. It can be said EF Core is easier to set up if we wanted to follow standard approach. If for some reason we wanted to have two separate intermedaite tables, Hibernate’s default behaviour would make things easier for us, but this is (probably) rarely the case. Overall, both of them provide effiecient and clean ways to configure such relationship.  Thanks for reading
-
-
