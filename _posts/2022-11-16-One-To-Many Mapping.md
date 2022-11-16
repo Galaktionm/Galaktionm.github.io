@@ -31,7 +31,7 @@ The other annotation, @OrderColumn, just tells hibernate to create a column that
 #### Bag
 We can create a bag with ArrayList, but instead of declaring it with “List” interface, we do it with “Collection” like this:
 
-<code> Collection<Bid> bids=new ArrayList<>();
+    Collection<Bid> bids=new ArrayList<>();
   
 “Bags” offer superior performance, but they support neither indexing nor sorting, and they don’t check for duplciates either. 
 
