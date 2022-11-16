@@ -5,6 +5,7 @@ date: 2022-11-16
 categories: BackendFrameworks
 ---
 
+
 One-To-Many entity association is arguably the most important and common type of relationship. There is only one standard approach: the “Many” side owns the foreign keys. Let’s review how Hibernate and Entity Framework Core configure such association.
 
 The standard way to configure One-To-Many relationship, no matter if it’s unidirectional or bidirectional, is to have “Many” side of the raltionship own the foreign keys referencing the other entity. 
