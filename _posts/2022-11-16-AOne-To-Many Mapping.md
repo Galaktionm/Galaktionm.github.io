@@ -37,8 +37,10 @@ We can create a bag with ArrayList, but instead of declaring it with “List” 
 “Bags” offer superior performance, but they support neither indexing nor sorting, and they don’t check for duplciates either. 
 
 #### Bidirectional
-Making this relationship bidirectional comes with additional quirks too, again thnaks to @JoinColumn. Consider this class that makes the relationship bidirectional:
-*OTMHibernateClassBid* 
+Making this relationship bidirectional comes with additional quirks too, again thanks to @JoinColumn. Consider this class that makes the relationship bidirectional:
+
+![OTOMHibernateClassBid](/assets/OTOMHibernateClassBid.png)
+
 We notice that it has the same @JoinColumn annotation, pointing to the same column. This is no coincidence: The Item’s @JoinColumn created the column, and Bid’s one is telling Hibernate to use this column to hold reference to items fro the bids’ point of view.
 
 ## Entity Framework Core
